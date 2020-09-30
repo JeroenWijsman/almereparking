@@ -78,15 +78,6 @@ park_heatmap_weekly_seasonal <- function(garage, data){
   
 }
 
-# Kaart van parkeer plaatsen
-map_parking_locations <- function(data){
-  
-  leaflet(data) %>%
-    addMarkers(~lon, ~lat, label = paste(data$label, data$naam)) %>%
-    addTiles()
-  
-}
-
 
 
 
