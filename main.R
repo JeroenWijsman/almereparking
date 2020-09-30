@@ -22,17 +22,6 @@ parking_map <- read_parking_map_data()
 # Original data, cleaned
 park <- clean_parking_raw(parking_raw, calibrate = FALSE)
 
-# Calibration step
-park_gr <- clean_parking_raw(parking_raw, calibrate = TRUE)
-
-# Aggregated to hourly timesteps.
-park_hr <- aggregate_parking(park_gr)
-
-
-# 3. Models
-
-# A model using day of the week.
-model1 <- fit_model_randomforest(park_hr, form = 1)
 
 # A model without day of the week.
 model2 <- fit_model_randomforest(park_hr, form = 2)
